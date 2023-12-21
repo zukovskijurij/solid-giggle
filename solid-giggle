@@ -1,0 +1,17 @@
+        .overlayPreferenceValue(BoundsPreferenceKey.self) { preferences in
+            GeometryReader { geometry in
+                preferences.map {
+                    Rectangle()
+                        .fill(.green)
+                        .frame(
+class AdvancedCombineViewModel: ObservableObject {
+    
+    @Published var data: [String] = []
+    @Published var error = ""
+    let dataService = AdvancedCombineDataService()
+    
+    var cancellables = Set<AnyCancellable>()
+    
+    init() {
+        addSubscribers()
+    }
